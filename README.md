@@ -52,4 +52,61 @@ how to start up load your extension visit this link:
 
 ---
 
-## chrome.accessibilityFeatures
+## API Reference
+Chrome provides some APIs for special work. Some APIs is synchronous but many APIs is asynchronous. [extension api design](https://www.youtube.com/watch?v=bmxr75CV36A)
+
+**sync**
+in sync: extension stop every thing other work.
+```js
+chrome.extension.getURL('helloWorld.html)
+```
+
+**async**
+in async: Google Chrome is multi-process architecture. Web pages and JavaScript run in processes. which are not only separate from each other,but also from the main browser process which alone has the ability to do things like read & write to the local file system.
+```js
+chrome.bookmark.update(40, {title: "New Title"}, callback);
+function callback(bookmarkNode) {
+    // Do something with the changed bookmark.
+}
+```
+---
+### Stable APIs
+
+#### accessibilityFeatures
+This API to manage Chrome's accessibility features. This API to get and set individual accessibility features. AccessibilityFeatures.read permission to get the value and AccessibilityFeatures.modify permission to set the value and clear the value.
+
+**Permissions**: accessibilityFeatures.modify, accessibilityFeatures.read
+
+**Properties**
+
+* **All OS**
+    * animationPolicy
+<br />
+* **Chrome only**
+    * autoclick
+    * caretHighlight
+    * cursorColor
+    * cursorHighlight
+    * dockedMagnifier
+    * focusHighlight
+    * highContrast
+    * largeCursor
+    * screenMagnifier
+    * selectToSpeak
+    * spokenFeedback
+    * stickyKeys
+    * switchAccess
+    * virtualKeyboard
+
+##### Chrome settings
+The Chrome Setting prototype provides some functions get, set, clear and onChange (event). [type-ChromeSetting](type-ChromeSetting)
+
+##### try this code
+Click here for working code: on my git :-  [animationPolicy](https://github.com/AmanSilawat/Course--Chrome-Extensions--Google-Docs/api/animation-policy/animation-policy)
+```js
+chrome.accessibilityFeatures.animationPolicy.set(
+    { value: setting },
+    function (callback) {
+    // Called at the completion of the set operation.
+});
+```
