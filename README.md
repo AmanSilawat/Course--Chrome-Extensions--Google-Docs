@@ -76,33 +76,35 @@ function callback(bookmarkNode) {
 This API to manage Chrome's accessibility features. This API to get and set individual accessibility features. AccessibilityFeatures.read permission to get the value and AccessibilityFeatures.modify permission to set the value and clear the value.
 
 **Permissions**: accessibilityFeatures.modify, accessibilityFeatures.read
+<br />
 
 **Properties**
 
-* **All OS**
+- **All OS**
     * animationPolicy
 <br />
-* **Chrome only**
-    * autoclick
-    * caretHighlight
-    * cursorColor
-    * cursorHighlight
-    * dockedMagnifier
-    * focusHighlight
-    * highContrast
-    * largeCursor
-    * screenMagnifier
-    * selectToSpeak
-    * spokenFeedback
-    * stickyKeys
-    * switchAccess
-    * virtualKeyboard
-
+- **Chrome only**
+    - autoclick
+    - caretHighlight
+    - cursorColor
+    - cursorHighlight
+    - dockedMagnifier
+    - focusHighlight
+    - highContrast
+    - largeCursor
+    - screenMagnifier
+    - selectToSpeak
+    - spokenFeedback
+    - stickyKeys
+    - switchAccess
+    - virtualKeyboard
+<br />
 ##### Chrome settings
-The Chrome Setting prototype provides some functions get, set, clear and onChange (event). [type-ChromeSetting](type-ChromeSetting)
+The Chrome Setting prototype provides some functions get, set, clear and onChange (event). [type-ChromeSetting](https://developer.chrome.com/docs/extensions/reference/types/#chrome-settings)
 
+<br />
 ##### try this code
-Click here for working code: on my git :-  [animationPolicy](https://github.com/AmanSilawat/Course--Chrome-Extensions--Google-Docs/api/animation-policy/animation-policy)
+Click here for working code: on my git :-  [animationPolicy](https://github.com/AmanSilawat/Course--Chrome-Extensions--Google-Docs/tree/master/api/accessibility-features/animation-policy)
 ```js
 chrome.accessibilityFeatures.animationPolicy.set(
     { value: setting },
