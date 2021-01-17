@@ -83,7 +83,7 @@ This API to manage Chrome's accessibility features. This API to get and set indi
 - **All OS**
     * animationPolicy
 
-- **Chrome only**
+- **Chrome OS only**
     - autoclick
     - caretHighlight
     - cursorColor
@@ -112,3 +112,41 @@ chrome.accessibilityFeatures.animationPolicy.set(
     // Called at the completion of the set operation.
 });
 ```
+
+___
+#### action
+
+Use this api to put icon on the toolbar and right side of the address bar. Set action on all pages.
+
+all page default state is : default_state: enabled
+only current page state is : default_state: disabled
+
+if the extension is disabled, when the icon color appears in gray. In addition to its icon, an action can also have a tooltip, a badge, and a popup.
+
+Manifest **2 version** `manifest.json`
+```
+{
+  "browser_action": { … },
+  "page_action": { … }
+}
+
+// background.js
+chrome.browserAction.onClicked.addListener(tab => { … });
+chrome.pageAction.onClicked.addListener(tab => { … });
+```
+
+Modified this in manifest **3 version** `manifest.json`
+```
+{
+  "action": { … }
+}
+
+// background.js
+chrome.action.onClicked.addListener(tab => { … });
+```
+
+
+`The chrome.action API is in development mode.`
+The maximum currently-supported manifest version is 2, but this is 3. Certain features may not work as expected.
+
+---
