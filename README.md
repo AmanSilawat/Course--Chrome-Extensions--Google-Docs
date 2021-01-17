@@ -72,7 +72,7 @@ function callback(bookmarkNode) {
 ---
 ### Stable APIs
 
-#### accessibilityFeatures
+#### chrome.accessibilityFeatures
 This API to manage Chrome's accessibility features. This API to get and set individual accessibility features. AccessibilityFeatures.read permission to get the value and AccessibilityFeatures.modify permission to set the value and clear the value.
 
 **Permissions**: accessibilityFeatures.modify, accessibilityFeatures.read
@@ -114,7 +114,7 @@ chrome.accessibilityFeatures.animationPolicy.set(
 ```
 
 ___
-#### action
+#### chrome.action
 
 Use this api to put icon on the toolbar and right side of the address bar. Set action on all pages.
 
@@ -150,3 +150,69 @@ chrome.action.onClicked.addListener(tab => { … });
 The maximum currently-supported manifest version is 2, but this is 3. Certain features may not work as expected.
 
 ---
+
+#### chrome.alarms
+
+Use the chrome.alarms API to schedule code to run sometimes or at a specified time in the future.
+
+***Permission***: alarms
+
+
+**Summary**
+
+Types: Alarm, AlarmCreateInfo
+
+| Types             | PROPERTIES                |
+| :---              |    :----                  |
+| Alarm             | name                      |
+|                   | periodInMinutes           |
+|                   | scheduledTime (optional)  |
+| AlarmCreateInfo   | delayInMinutes            |
+|                   | periodInMinutes           |
+|                   | when                      |
+
+| Methods    | Code     |
+| :---       |          :--- |
+| clear      | chrome.alarms.clear(name: string, callback: function)      |
+| clearAll   | chrome.alarms.clearAll(callback: function)       |
+| create     | chrome.alarms.create(name?: string, alarmInfo: AlarmCreateInfo)      |
+| get        | chrome.alarms.get(name?: string, callback: function)      |
+| getAll     | chrome.alarms.getAll(callback: function)      |
+
+
+**Example**: 
+Create `minifest.js` [here this code](https://github.com/AmanSilawat/Course--Chrome-Extensions--Google-Docs/tree/master/api/alarm)
+```
+{
+    "manifest_version": 2,
+    "name": "Alarm Type",
+    "description": "Alarm example",
+    "version": "1.0",
+    "browser_action": {
+        "default_popup": "main.html"
+    },
+    "permissions": ["alarms"]
+}
+```
+
+Create `main.html`
+```html
+<html>
+    <body>
+        <!-- more code -->
+        <script src="./main.js"></script>
+    </body>
+</html>
+```
+
+Create `main.js`
+```js
+let alarmClock = {
+    createAlarmHandler (e) {}
+    clearAllHandler (e) {}
+    clearHandler (e) {}
+    showList (e) {}
+    setup (e) {}
+}
+// and more...
+```

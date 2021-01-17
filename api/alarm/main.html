@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Alarm</title>
+	</head>
+	<body style="width: 300px;">
+        <h1>Alarm</h1>
+
+
+        <fieldset>
+            <legend>Create Alarm</legend>
+            <input type="text" style="width: 200px;" placeholder="Enter Alarm Name" />
+            <input type="button" value="create" id="createBtn" style="width: 55px;"/>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Clear Specific Alarm</legend>
+            <input type="text" style="width: 200px;" placeholder="Enter Alarm Name" />
+            <input type="button" value="clear" id="clearBtn" style="width: 55px;"/>
+        </fieldset>
+        <br>
+        
+        <fieldset>
+            <legend>Clear All</legend>
+            <input type="button" value="Clear All" id="clearAll" />
+        </fieldset>
+
+        <fieldset>
+            <legend>Current Active Alarm List</legend>
+            <ul id="list"></ul>
+        </fieldset>
+		<script src="./main.js"></script>
+	</body>
+</html>

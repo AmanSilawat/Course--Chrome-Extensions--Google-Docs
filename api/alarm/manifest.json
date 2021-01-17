@@ -1,0 +1,10 @@
+{
+    "manifest_version": 2,
+    "name": "Alarm Type",
+    "description": "Alarm example",
+    "version": "1.0",
+    "browser_action": {
+        "default_popup": "main.html"
+    },
+    "permissions": ["alarms"]
+}
