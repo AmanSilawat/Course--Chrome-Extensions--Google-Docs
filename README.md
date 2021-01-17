@@ -75,7 +75,7 @@ function callback(bookmarkNode) {
 #### chrome.accessibilityFeatures
 This API to manage Chrome's accessibility features. This API to get and set individual accessibility features. AccessibilityFeatures.read permission to get the value and AccessibilityFeatures.modify permission to set the value and clear the value.
 
-**Permissions**: accessibilityFeatures.modify, accessibilityFeatures.read
+<span style="color: #3acc90;font-weight: 600;">Permissions:</span>: accessibilityFeatures.modify, accessibilityFeatures.read
 
 
 **Properties**
@@ -155,7 +155,7 @@ The maximum currently-supported manifest version is 2, but this is 3. Certain fe
 
 Use the chrome.alarms API to schedule code to run sometimes or at a specified time in the future.
 
-***Permission***: alarms
+<span style="color: #3acc90;font-weight: 600;">Permissions:</span>: alarms
 
 
 **Summary**
@@ -215,4 +215,23 @@ let alarmClock = {
     setup (e) {}
 }
 // and more...
+```
+
+Try this code in my ripo [here this code](https://github.com/AmanSilawat/Course--Chrome-Extensions--Google-Docs/tree/master/api/alarm), open devtool in popup environment and open console panel to check output.
+
+___
+#### chrome.bookmarks
+This Api to organize and manipulate bookmark. this api to create custom bookmark.
+
+<span style="color: #3acc90;font-weight: 600;">Permissions:</span> bookmarks
+
+**Manifest**
+```
+{
+  ...
+  "permissions": [
+    "bookmarks"
+  ],
+  ...
+}
 ```
