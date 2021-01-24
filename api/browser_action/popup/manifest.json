@@ -1,0 +1,10 @@
+{
+	"manifest_version": 2,
+	"name": "Browser Popup",
+	"version": "1.0",
+	"description": "Example of Browser Popup",
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_popup": "popup.html"
+	}
+}
