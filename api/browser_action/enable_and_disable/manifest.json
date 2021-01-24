@@ -1,0 +1,13 @@
+{
+	"manifest_version": 2,
+	"name": "browserAction disable Method",
+	"version": "1.0",
+	"description": "show the functionality of disable Method",
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_title": "disable"
+	}
+}
